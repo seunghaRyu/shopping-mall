@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<!-- Orale DB 설정 -->
+	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+		<property name="driverClassName" value="oracle.jdbc.pool.OracleDataSource"></property>
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:XE"></property>
+		<!-- Oracle 11g 경우 value="jdbc:oracle:thin:@URL주소:1521:XE" -->
+		<!-- Oracle 19 경우 value="jdbc:oracle:thin:@URL주소:1521:orcl" -->
+		<property name="username" value="project"></property>
+		<property name="password" value="a"></property>
+	</bean>
+
+	<bean id="datasource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
+		<constructor-arg ref="hikariConfig"></constructor-arg>
+	</bean>
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="datasource"></property>
+	</bean>	
+	
+	
+	<!-- 스프링이 인식될수있도록 패키지를 스캔한다 -->
+	<mybatis-spring:scan base-package="com.o.mapper"/>
+	<context:component-scan base-package="com.o.model"></context:component-scan>
+	<context:component-scan base-package="com.o.service"></context:component-scan>
+	
+	<!-- My sql 설정코드 - MySQL 데이터베이스 DataSource 설정 코드입니다. <bean id="hikariConfig" 
+		class="com.zaxxer.hikari.HikariConfig"> <property name="driverClassName" 
+		value="com.mysql.cj.jdbc.Driver"></property> <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/데이터베이스명?serverTimezone=Asia/Seoul"></property> 
+		<property name="username" value="사용자명"></property> <property name="password" 
+		value="비밀번호"></property> </bean> <bean id="datasource" class="com.zaxxer.hikari.HikariDataSource" 
+		destroy-method="close"> <constructor-arg ref="hikariConfig"></constructor-arg> 
+		</bean> 
+		
+		//MySQL경우
+	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+ 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/ksj?serverTimezone=Asia/Seoul"></property> 
+		
+		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
+		<property name="jdbcUrl" value="jdbc:log4jdbc:mysql://localhost:3306/ksj?serverTimezone=Asia/Seoul"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="1234"></property>
+	</bean>-->
+
+
+</beans>
