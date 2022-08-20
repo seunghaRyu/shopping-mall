@@ -4,15 +4,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>join</title>
-<link rel="stylesheet" href="/resources/css/member/join.css">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/resources/css/user/login.css">
 
 
 </head>
 <body>
+
 <div class="wrapper">
-	<div class="wrap">
-		<span>shop</span>
+	<div class="logo_wrap">
+		<span><a href="/main">Shopping mall</a></span>
 	</div>
 	<div class="login_wrap">
 		<div class="id_wrap">
@@ -22,17 +23,15 @@
 		</div>
 		<div class="pwd_wrap">
 			<div class="pwd_input_box">
-				<input class="pw_input">
+					<input class="pw_input">
 			</div>
 		</div>
 		<div class="login_button_wrap">
-			<inut type="button" class="login_button" value="로그인">
-		</div>
+			<input type="button" class="login_button" value="로그인">
+		</div>	
 		
 	</div>
-
 </div>
-
 
 </body>
 </html>

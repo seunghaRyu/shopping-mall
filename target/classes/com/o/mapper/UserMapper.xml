@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.o.mapper.UserMapper">
+	
+	<insert id="userinfo">
+	<![CDATA[
+		insert into mall_user values
+		(#{UserId},#{UserPwd},#{UserName},#{UserEmail},#{UserAddr1},
+			#{UserAddr2},#{UserAddr3},'1',sysdate,sysdate,sysdate,'0','0');
+	]]>		
+	</insert>
+
+
+
+
+
+
+
+
+  </mapper>
