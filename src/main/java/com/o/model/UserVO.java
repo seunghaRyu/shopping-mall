@@ -7,7 +7,7 @@ public class UserVO {
 	private String userId; 		// 유저아이디
 	private String userPwd; 	//유저 비밀번호
 	private String userName;	//유저 이름
-	private String userMail;	//유저 이메일
+	private String userEmail;	//유저 이메일
 	private String userAddr1; 	//유저 우편번호
 	private String userAddr2; 	//유저 주소
 	private String userAddr3; 	//유저 상세주소
@@ -37,11 +37,11 @@ public class UserVO {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	public String getUserMail() {
-		return userMail;
+	public String getUserEmail() {
+		return userEmail;
 	}
-	public void setUserMail(String userMail) {
-		this.userMail = userMail;
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
 	}
 	public String getUserAddr1() {
 		return userAddr1;
@@ -101,7 +101,7 @@ public class UserVO {
 	//toString
 	@Override
 	public String toString() {
-		return "UserVO [userId=" + userId + ", userPwd=" + userPwd + ", userName=" + userName + ", userMail=" + userMail
+		return "UserVO [userId=" + userId + ", userPwd=" + userPwd + ", userName=" + userName + ", userEmail=" + userEmail
 				+ ", userAddr1=" + userAddr1 + ", userAddr2=" + userAddr2 + ", userAddr3=" + userAddr3 + ", adminCk="
 				+ adminCk + ", regDate=" + regDate + ", signup_date=" + signup_date + ", last_join=" + last_join
 				+ ", money=" + money + ", point=" + point + "]";

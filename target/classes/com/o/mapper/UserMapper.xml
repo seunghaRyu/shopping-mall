@@ -8,7 +8,7 @@
 	<![CDATA[
 		insert into mall_user values
 		(#{UserId},#{UserPwd},#{UserName},#{UserEmail},#{UserAddr1},
-			#{UserAddr2},#{UserAddr3},'1',sysdate,sysdate,sysdate,'0','0');
+			#{UserAddr2},#{UserAddr3},'1',sysdate,sysdate,sysdate,'0','0')
 	]]>		
 	</insert>
 
